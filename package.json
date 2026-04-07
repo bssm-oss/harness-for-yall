@@ -1,5 +1,5 @@
 {
-  "name": "@justn-hyeok/claude-code-harness",
+  "name": "harness-for-yall",
   "version": "1.0.0",
   "description": "Multi-agent harness for Claude Code: dev pipeline, code review, frontend/backend experts, codebase exploration",
   "type": "module",
