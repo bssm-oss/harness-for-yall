@@ -38,14 +38,6 @@ npx harness-for-yall --force
 
 `~/.claude/`에 에이전트/스킬 파일을 복사한다. 의존성 없음.
 
-[OpenCode](https://github.com/anomalyco/opencode)용:
-
-```bash
-npx harness-for-yall --target opencode
-```
-
-모델명 자동 변환 (`opus` → `anthropic/claude-opus-4-6`) + `mode: subagent` frontmatter 추가.
-
 ### 방법 2 — Plugin Marketplace
 
 Claude Code 안에서:

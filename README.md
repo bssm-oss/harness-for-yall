@@ -38,14 +38,6 @@ npx harness-for-yall --force
 
 Copies agents/skills to `~/.claude/`. Zero dependencies.
 
-For [OpenCode](https://github.com/anomalyco/opencode):
-
-```bash
-npx harness-for-yall --target opencode
-```
-
-Automatically converts model names (`opus` → `anthropic/claude-opus-4-6`) and adds `mode: subagent` frontmatter.
-
 ### Option 2 — Plugin Marketplace
 
 Inside Claude Code:
