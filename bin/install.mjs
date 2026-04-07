@@ -67,11 +67,11 @@ function transformForOpenCode(content) {
     // Convert tools array to OpenCode permission record
     // Claude Code: tools:\n  - Read\n  - Write\n  - Bash
     // OpenCode: permission:\n  read: allow\n  write: allow\n  bash:\n    "*": allow
-    const toolsMatch = transformed.match(/^tools:\n((?:\s+-\s+\w+\n?)+)/m);
+    const toolsMatch = transformed.match(/^tools:\n((?:\s+-\s+[\w.:-]+\n?)+)/m);
     if (toolsMatch) {
       const toolNames = toolsMatch[1]
         .split('\n')
-        .map((l) => l.replace(/^\s+-\s+/, '').trim().toLowerCase())
+        .map((l) => l.replace(/^\s+-\s+/, '').trim())
         .filter(Boolean);
 
       const TOOL_PERMISSION_MAP = {
@@ -82,16 +82,20 @@ function transformForOpenCode(content) {
         grep: 'grep: allow',
         bash: 'bash:\n    "*": allow',
         notebookedit: 'notebook: allow',
+        agent: 'task: allow',
       };
 
+      // Skip MCP tools (mcp__*) and other unknown tools
       const permissionLines = toolNames
+        .map((t) => t.toLowerCase())
+        .filter((t) => !t.startsWith('mcp__'))
         .map((t) => TOOL_PERMISSION_MAP[t])
         .filter(Boolean)
         .map((l) => `  ${l}`)
         .join('\n');
 
       const replacement = permissionLines ? `permission:\n${permissionLines}` : '';
-      transformed = transformed.replace(/^tools:\n(?:\s+-\s+\w+\n?)+/m, replacement);
+      transformed = transformed.replace(/^tools:\n(?:\s+-\s+[\w.:-]+\n?)+/m, replacement);
     }
 
     return transformed;
