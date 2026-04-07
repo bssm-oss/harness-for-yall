@@ -94,7 +94,7 @@ function transformForOpenCode(content) {
         .map((l) => `  ${l}`)
         .join('\n');
 
-      const replacement = permissionLines ? `permission:\n${permissionLines}` : '';
+      const replacement = permissionLines ? `permission:\n${permissionLines}\n` : '';
       transformed = transformed.replace(/^tools:\n(?:\s+-\s+[\w.:-]+\n?)+/m, replacement);
     }
 
