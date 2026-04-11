@@ -43,7 +43,7 @@ Copies agents/skills to `~/.claude/`. Zero dependencies.
 Inside Claude Code:
 
 ```
-/plugin marketplace add bssm-oss/harness-for-yall
+/plugin marketplace add justn-hyeok/harness-for-yall
 ```
 
 Then install what you need:
@@ -59,7 +59,7 @@ Then install what you need:
 ### Option 3 — Shell script
 
 ```bash
-git clone https://github.com/bssm-oss/harness-for-yall.git
+git clone https://github.com/justn-hyeok/harness-for-yall.git
 cd harness-for-yall
 chmod +x install.sh && ./install.sh
 ```

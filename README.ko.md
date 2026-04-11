@@ -43,7 +43,7 @@ npx harness-for-yall --force
 Claude Code 안에서:
 
 ```
-/plugin marketplace add bssm-oss/harness-for-yall
+/plugin marketplace add justn-hyeok/harness-for-yall
 ```
 
 필요한 팀 설치:
@@ -59,7 +59,7 @@ Claude Code 안에서:
 ### 방법 3 — 쉘 스크립트
 
 ```bash
-git clone https://github.com/bssm-oss/harness-for-yall.git
+git clone https://github.com/justn-hyeok/harness-for-yall.git
 cd harness-for-yall
 chmod +x install.sh && ./install.sh
 ```
